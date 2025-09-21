@@ -5,7 +5,7 @@ const Bottle = ({ bottle }) => {
     const { img } = bottle;
     return (
         <div className='card'>
-            <img src={img} alt="" />
+            <img className='size' src={img} alt="" />
         </div>
     );
 };
