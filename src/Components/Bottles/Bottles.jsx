@@ -1,19 +1,14 @@
 import React, { use } from 'react';
+import Bottle from './Bottle/Bottle';
 
 const Bottles = ({ bottlesPromise }) => {
     const bottles = use(bottlesPromise);
-    console.log(bottles);
     return (
         <div>
-            <div>
-                {bottles.map(bottle => (
-                    <div key={bottle.id}>
-                        <h3>{bottle.name}</h3>
-                        <p>Price: ${bottle.price}</p>
-                        <p>Color: {bottle.color}</p>
-                    </div>
-                ))}
-            </div>
+            <h3>Bottles: {bottles.length}</h3>
+            {
+                bottles.map(bottle => <Bottle bottle={bottle} key={bottle.id}></Bottle>)
+            }
         </div>
     );
 };
